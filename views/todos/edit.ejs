@@ -1,0 +1,13 @@
+<%- include("../partials/header") %>
+<!-- this todo is from the  edit function in controllers todo.js-->
+<form action="/todos/<%= todo.id %>?_method=PUT" method="POST">
+  <!-- todo.name(or whatever the key was) -->
+  <input type="text" name="todo" value="<%= todo.todo %>" /> <br />
+  <label>
+    Completed?
+    <input type="checkbox" name ="done" <%= todo.done ? "checked" : "" %>>
+  </label> <br>
+  <button type="submit">Update To Do</button>
+</form>
+
+<%- include("../partials/footer") %>
